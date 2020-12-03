@@ -1,0 +1,18 @@
+@import '../../../styles.scss';
+
+.button-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.button-1 {    @include button-001($yellow-color,$black-color); }
+.button-2 {    @include button-001($red-color,white); }
+.button-3 {    @include large-button($black-color,white); }
+
+.image {
+    width: 309px;
+    height: 309px;
+    left: 33px;
+    top: 87px;
+}

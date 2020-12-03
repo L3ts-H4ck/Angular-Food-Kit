@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+$color-primario: #55A;
+$color-secundario: #6B6;
+$color-texto: #666;
+
+$espaciado-estandar: 10px;
+$espaciado-doble: 20px;
+
+$fuente-normal: 1em;
+$fuente-pequena: 21px;
+$fuente-grande: 36px;
+
+$tipografia-general:'Montserrat', verdana, sans-serif;
+$tipografia-alternativa: 'Montserrat', sans-serif;
+
+$red-color:#F95A2C;
+$black-color:#18191F;
+$yellow-color:#ffbd12;
+
+// Prototypes Mixins
+
+@mixin prototype-text() {
+    font-family: $tipografia-general;
+    font-style: normal;
+    font-weight: 800;
+    font-size: $fuente-pequena;
+    text-align: center;
+    line-height: 28px;
+}
+
+@mixin button-001($bg-color,$text-color){
+    background-color: $bg-color;
+    color: $text-color;
+    
+    width: 157px;
+    height: 50px;
+    border: 2px solid $black-color;
+    box-sizing: border-box;
+    border-radius: 16px;
+    margin: 10px;
+    @include prototype-text();
+}
+
+@mixin large-button($bg-color,$text-color){
+    background-color: $bg-color;
+    color: $text-color;
+    width: 90%;
+    height: 50px;
+    border: 2px solid $black-color;
+    box-sizing: border-box;
+    border-radius: 16px;
+    margin: 10px;
+    @include prototype-text();
+}
+
+@mixin text-format($tipografia,$tipo,$ancho,$size){
+    font-family: $tipografia;
+    font-style: $tipo;
+    font-weight: $ancho;
+    font-size: $size;
+}
+
+// Global Styles
+
+body {
+    @include text-format( $tipografia-general,normal,500,$fuente-pequena);
+    line-height: 28px;
+    text-align: center;
+}
+
+h1{
+    @include text-format( $tipografia-general,normal,800,$fuente-grande);
+    line-height: 40px;
+    text-align: center;
+}
+
+
+.user{
+    width: 327px;
+    height: 56px;
+    left: 24px;
+    top: 88px;
+    border: 2px solid $black-color;
+    box-sizing: border-box;
+    border-radius: 16px;
+    margin: 10px;
+    @include text-format( $tipografia-general,normal,500,$fuente-pequena);
+}
